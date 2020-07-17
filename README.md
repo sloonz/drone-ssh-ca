@@ -21,7 +21,7 @@ $ docker run -d \
   --env=CA_ENV_PUBLIC_KEY="$CA_ENV_PUBLIC_KEY"
   --env=CA_PRIVATE_KEY="$(cat id_ca)" \
   --restart=always \
-  --name=drone-env-merge
+  --name=drone-ssh-ca
 ```
 
 Where `CA_ENV_PUBLIC_KEY` is the public key associated to the private
