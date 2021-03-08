@@ -3,4 +3,4 @@
 test -d ~/.ssh || mkdir ~/.ssh
 test -f ~/.ssh/id_ed25519 || ssh-keygen -q -N "" -f ~/.ssh/id_ed25519 -t ed25519
 echo StrictHostKeyChecking accept-new >> ~/.ssh/config
-curl -s -d repo="$DRONE_SIGNED_REPO" -d build="$DRONE_SIGNED_BUILD" --data-urlencode pubkey="$(cat ~/.ssh/id_ed25519.pub)" "$1" > ~/.ssh/id_ed25519-cert.pub
+curl -f -s -d repo="$DRONE_SIGNED_REPO" -d build="$DRONE_SIGNED_BUILD" --data-urlencode pubkey="$(cat ~/.ssh/id_ed25519.pub)" "$1" > ~/.ssh/id_ed25519-cert.pub
